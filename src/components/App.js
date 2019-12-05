@@ -1,6 +1,7 @@
 import React from 'react';
 import UserCreate from './UserCreate';
 import LanguageContext from '../contexts/LanguageContext'
+import LanguageSelector from '../components/LanguageSelector';
 
 class App extends React.Component {
 
@@ -13,18 +14,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        App
-      <div>
-          Select a language:
-          <i className="flag us" onClick={() => this.onLanguageChange('english')}></i>
-          <i className="flag nl" onClick={() => this.onLanguageChange('dutch')}></i>
-        </div>
-
+        <LanguageSelector onLanguageChange={this.onLanguageChange} />
         <LanguageContext.Provider value={this.state.language}>
           < UserCreate />
         </LanguageContext.Provider>
 
       </div>
+
     );
   }
 }
