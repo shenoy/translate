@@ -6,13 +6,14 @@ class UserCreate extends React.Component {
 
   render() {
 
+    
     return (
-
       <div className="ui form">
         <Field />
         <Button />
       </div>
-    )
+
+    );
   }
 }
 
